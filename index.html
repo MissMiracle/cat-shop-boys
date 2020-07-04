@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+        .flex-header {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: white;
+            font-size: 18px;
+            font-family: caviar dreams;
+            color: #0098c3;
+            text-align: center;
+            align-items: center;
+        }
+        
+        .flex-image {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            font-size: 18px;
+        }
+        
+        .image {
+            background: url(flauschis.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            height: 50vh;
+            background-position-y: 120%;
+        }
+        
+        .flex-container2 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            border-color: #0098c3;
+            border-style: solid;
+            background-color: #0098c3;
+            font-size: 18px;
+            font-family: caviar dreams;
+            color: white;
+            text-align: center;
+            align-items: center;
+        }
+        
+        .flex-item {
+            flex-grow: 1
+        }
+        
+        .flex-item:hover {
+            background-color: white;
+            color: #0098c3;
+        }
+        
+        #container {
+            margin: 2em;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div class="flex-header">
+            <img src="Logo.png" style="display: flex;" width=100 hight=80 alt="Logo">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;     padding: 10px 0em 10px 0em;
+            border-color: #63a5c3;
+            border-style: solid;
+            border-width: 1px;">
+                <div class="flex-item" style="margin-right: 1em;"> icon1</div>
+                <div class="flex-item">icon2</div>
+                <div class="flex-item" style="margin-left: 1em;">icon3</div>
+
+                <div class="flex-item" style="flex-basis: 100%;"></div>
+                <div class="flex-item" style="margin-right: 1em;">Mein Konto</div>
+                <div class="flex-item">Wunschliste</div>
+                <div class="flex-item" style="margin-left: 1em;">Warenkorb</div>
+            </div>
+
+        </div>
+        <div style="margin-top: 10px;margin-bottom: 10px; font-size: 2em;">
+            Luna-Leo-Onlineshop
+        </div>
+
+        <div>
+            <div class="image"></div>
+        </div>
+
+        <div class="flex-container2">
+            <div class="flex-item">Marken</div>
+            <div class="flex-item">Trockenfutter</div>
+            <div class="flex-item">Nassfutter</div>
+            <div class="flex-item">Snacks</div>
+            <div class="flex-item">Hygiene</div>
+            <div class="flex-item">Katzenspielzeug</div>
+            <div class="flex-item">Kratzmöglichkeiten</div>
+        </div>
+    </div>
+
+    <input placeholder="Suchen..">
+
+    <button>Los!</button>
+
+</body>
+
+</html>
