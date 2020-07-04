@@ -57,6 +57,19 @@
     align-items: center;
 }
 
+#products-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #67d0ee;
+    font-size: 18px;
+    font-family: caviar dreams;
+    color: white;
+    text-align: center;
+    align-items: center;
+}
+
 .products {
     flex-grow: 1;
     padding: 0.4em 0em;
@@ -64,6 +77,16 @@
 
 .flex-item {
     flex-grow: 1;
+}
+
+.product-item {
+    height: 250px;
+    width: 250px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    margin: 10px;
 }
 
 .products:hover {
