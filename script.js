@@ -1,6 +1,7 @@
 let sliderArray, productsContainer;
 let sliderPosition;
 let sliderElement;
+let interval;
 
 
 function setup() {
@@ -11,6 +12,14 @@ function setup() {
     productsContainer = document.getElementById("products-container");
 
     loadProducts("toys");
+
+    interval = window.setInterval(function() {
+        changeSlideLoop(1);
+    }, 3000);
+}
+
+function stopSlider() {
+    clearInterval(interval);
 }
 
 function showSliderButton() {
@@ -34,6 +43,23 @@ function changeSlide(elem, direction) {
         sliderElement.style.flexGrow = "8";
         sliderElement.style.backgroundPositionY = "120%";
     }
+}
+
+function changeSlideLoop(direction) {
+
+    if (sliderPosition + direction < 0) {
+        sliderPosition = sliderArray.length - 1;
+    } else if (sliderPosition + direction >= sliderArray.length) {
+        sliderPosition = 0;
+    } else {
+        sliderPosition += direction;
+    }
+    sliderElement.style.background = "url(" + sliderArray[sliderPosition] + ") no-repeat center center";
+    sliderElement.style.height = "50vh";
+    sliderElement.style.backgroundSize = "cover";
+    sliderElement.style.flexGrow = "8";
+    sliderElement.style.backgroundPositionY = "85%";
+
 }
 
 function loadProducts(category) {

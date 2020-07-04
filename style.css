@@ -20,14 +20,16 @@
 }
 
 #slider-element {
-    background: url(flauschis.jpg) no-repeat center center fixed;
+    background: url(flauschis.jpg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     height: 50vh;
     flex-grow: 8;
-    background-position-y: 120%;
+    background-position-y: 85%;
+    -webkit-transition: background-image 0.2s linear;
+    transition: background-image 0.5s linear;
 }
 
 .slider-button {
