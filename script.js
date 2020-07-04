@@ -6,7 +6,36 @@ let interval;
 
 function setup() {
     sliderArray = ["test1.jpg", "flauschis.jpg", "test2.jpg"];
-    productsArray = ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg", "product5.jpg", "product6.jpg"];
+    productsArray = [{
+            "file": "product1.jpg",
+            "categories": ["toys"]
+        },
+        {
+            "file": "product2.jpg",
+            "categories": ["toys"]
+        },
+        {
+            "file": "product3.jpg",
+            "categories": ["toys"]
+        },
+        {
+            "file": "product4.jpg",
+            "categories": ["toys"]
+        },
+        {
+            "file": "product5.jpg",
+            "categories": ["toys"]
+        },
+        {
+            "file": "product6.jpg",
+            "categories": ["snacks"]
+        },
+        {
+            "file": "wetfood1.jpg",
+            "categories": ["wetfood"]
+        }
+    ]
+
     sliderPosition = 1;
     sliderElement = document.getElementById("slider-element");
     productsContainer = document.getElementById("products-container");
@@ -63,14 +92,21 @@ function changeSlideLoop(direction) {
 }
 
 function loadProducts(category) {
-    productsArray.map(element => {
-        let newProduct = document.createElement("div");
-        newProduct.classList.add("product-item");
 
-        newProduct.style.background = "url(" + element + ")";
-        newProduct.style.backgroundSize = "cover";
+    while (productsContainer.lastElementChild) {
+        productsContainer.removeChild(productsContainer.lastElementChild);
+    }
 
-        productsContainer.appendChild(newProduct);
-    })
+    productsArray
+        .filter(element => element.categories == category)
+        .map(element => {
+            let newProduct = document.createElement("div");
+            newProduct.classList.add("product-item");
+
+            newProduct.style.background = "url(" + element.file + ")";
+            newProduct.style.backgroundSize = "cover";
+
+            productsContainer.appendChild(newProduct);
+        })
 
 }
