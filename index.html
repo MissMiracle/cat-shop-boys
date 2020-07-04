@@ -3,70 +3,11 @@
 <html>
 
 <head>
-    <style>
-        .flex-header {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            background-color: white;
-            font-size: 18px;
-            font-family: caviar dreams;
-            color: #0098c3;
-            text-align: center;
-            align-items: center;
-        }
-        
-        .flex-image {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            font-size: 18px;
-        }
-        
-        .image {
-            background: url(flauschis.jpg) no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            height: 50vh;
-            background-position-y: 120%;
-        }
-        
-        .flex-container2 {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            border-color: #0098c3;
-            border-style: solid;
-            background-color: #0098c3;
-            font-size: 18px;
-            font-family: caviar dreams;
-            color: white;
-            text-align: center;
-            align-items: center;
-        }
-        
-        .flex-item {
-            flex-grow: 1
-        }
-        
-        .flex-item:hover {
-            background-color: white;
-            color: #0098c3;
-        }
-        
-        #container {
-            margin: 2em;
-        }
-    </style>
-
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="setup()">
 
     <div id="container">
 
@@ -87,28 +28,31 @@
             </div>
 
         </div>
-        <div style="margin-top: 10px;margin-bottom: 10px; font-size: 2em;">
+        <div style="color: #0098c3;margin-top: 10px;margin-bottom: 10px; font-size: 2em; font-family: caviar dreams;">
             Luna-Leo-Onlineshop
         </div>
 
-        <div>
-            <div class="image"></div>
+        <div class="flex-header">
+            <div class="slider-button" style="left: 0;" onclick="changeSlide(-1)">
+                <</div>
+                    <div id="slider-element"></div>
+                    <div class="slider-button" style="right: 0;" onclick="changeSlide(1)">></div>
+            </div>
+
+            <div class="flex-container2">
+                <div class="products">Marken</div>
+                <div class="products">Trockenfutter</div>
+                <div class="products">Nassfutter</div>
+                <div class="products">Snacks</div>
+                <div class="products">Hygiene</div>
+                <div class="products">Katzenspielzeug</div>
+                <div class="products">Kratzmöglichkeiten</div>
+            </div>
         </div>
 
-        <div class="flex-container2">
-            <div class="flex-item">Marken</div>
-            <div class="flex-item">Trockenfutter</div>
-            <div class="flex-item">Nassfutter</div>
-            <div class="flex-item">Snacks</div>
-            <div class="flex-item">Hygiene</div>
-            <div class="flex-item">Katzenspielzeug</div>
-            <div class="flex-item">Kratzmöglichkeiten</div>
-        </div>
-    </div>
+        <input placeholder="Suchen..">
 
-    <input placeholder="Suchen..">
-
-    <button>Los!</button>
+        <button>Los!</button>
 
 </body>
 
