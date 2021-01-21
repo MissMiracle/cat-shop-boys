@@ -6,6 +6,9 @@ let interval;
 
 function setup() {
     sliderArray = ["test1.jpg", "flauschis.jpg", "test2.jpg"];
+    //TODO add multiple cateogries for some products like brand and dryfood
+    //TODO add routing to detail page
+    //TODO add search with filter + add keywords to each product
     productsArray = [{
             "file": "product1.jpg",
             "categories": ["toys"]
